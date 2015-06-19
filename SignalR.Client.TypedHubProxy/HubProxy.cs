@@ -216,8 +216,7 @@
 
             if (!(instance is TClientInterface))
             {
-                throw new System.Data.ConstraintException(string.Format("{0} doesn't implements the interface {1}.",
-                    instance.GetType().Name, typeof(TClientInterface).Name));
+                throw new ConstraintException(string.Format("{0} doesn't implements the interface {1}.", instance.GetType().Name, typeof(TClientInterface).Name));
             }
 
             System.Reflection.MethodInfo[] methodInfos = typeof(TClientInterface).GetMethods();
